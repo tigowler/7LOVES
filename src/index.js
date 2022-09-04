@@ -1,13 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.module.css";
+import App from "./app";
+import reportWebVitals from "./reportWebVitals";
+import AuthService from "./service/auth_service";
+import { firebaseApp } from "./service/firebase";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const authService = new AuthService(firebaseApp);
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <App authService={authService} />
   </React.StrictMode>
 );
 
