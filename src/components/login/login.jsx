@@ -1,5 +1,5 @@
 import styles from "./login.module.css";
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Login = ({ authService }) => {
@@ -15,6 +15,12 @@ const Login = ({ authService }) => {
         goToMain(data.user.uid);
       });
   };
+
+  useEffect(() => {
+    authService.onAuthChange((user) => {
+      user && goToMain(user.uid);
+    });
+  });
   return (
     <section className={styles.background}>
       <h1 className={styles.title}>7LOVES</h1>
