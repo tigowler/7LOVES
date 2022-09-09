@@ -13,6 +13,32 @@ const MainHome = ({ authService }) => {
   const [userName, setUserName] = useState(
     location.state && location.state.userName
   );
+  const [cards, setCards] = useState([
+    {
+      date: "20220901",
+      title: "#Shanghai Dragons",
+      tags: ["#e-sports", "#IZaYaKi", "#Fleta"],
+      count: 52,
+      theme: "skyblue",
+      imageURL: "",
+    },
+    {
+      date: "20220901",
+      title: "#Shanghai Dragons",
+      tags: ["#e-sports", "#IZaYaKi", "#Fleta"],
+      count: 52,
+      theme: "blue",
+      imageURL: "",
+    },
+    {
+      date: "20220901",
+      title: "#Shanghai Dragons",
+      tags: ["#e-sports", "#IZaYaKi", "#Fleta"],
+      count: 52,
+      theme: "black",
+      imageURL: "",
+    },
+  ]);
 
   const onLogout = useCallback(() => {
     authService.logout();
@@ -32,7 +58,9 @@ const MainHome = ({ authService }) => {
   return (
     <>
       <Header onLogout={onLogout} userName={userName} />
-      <Card />
+      {cards.map((card, index) => {
+        return <Card key={index} card={card} />;
+      })}
     </>
   );
 };

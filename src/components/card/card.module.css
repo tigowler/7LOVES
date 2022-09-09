@@ -1,4 +1,158 @@
+@value commonBlack, commonBlue, commonSkyblue, commonGrey from '../../common/colors.css';
+
+* {
+  box-sizing: border-box;
+}
+
+.card {
+  width: 13em;
+  height: 20em;
+  padding: 1rem;
+  border-radius: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card.skyblue {
+  background-color: commonSkyblue;
+  border: 0.1rem solid commonSkyblue;
+}
+
+.card.blue {
+  background-color: commonBlue;
+  border: 0.1rem solid commonBlue;
+}
+
+.card.black {
+  background-color: commonBlack;
+  border: 0.1rem solid commonSkyblue;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 0.2rem;
+}
+
 .more {
-  width: 10em;
-  height: 5em;
+  font-size: 1.2rem;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+}
+
+.more:hover {
+  transform: scale(1.1);
+}
+
+.more.skyblue {
+  color: commonBlue;
+}
+
+.more.blue {
+  color: commonSkyblue;
+}
+
+.more.black {
+  color: commonSkyblue;
+}
+
+.tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.date,
+.tag,
+.count {
+  font-size: 0.9rem;
+  background-color: transparent;
+  border-radius: 1.2rem;
+  padding: 0.2rem 0.7rem;
+}
+
+.date,
+.count {
+  font-weight: 700;
+}
+
+.date.skyblue,
+.count.skyblue {
+  background-color: commonBlue;
+  color: commonSkyblue;
+  border: 0.1rem solid commonBlue;
+}
+
+.date.blue,
+.count.blue {
+  background-color: commonSkyblue;
+  color: commonBlue;
+  border: 0.1rem solid commonSkyblue;
+}
+
+.date.black,
+.count.black {
+  background-color: commonSkyblue;
+  color: commonBlack;
+  border: 0.1rem solid commonSkyblue;
+}
+
+.tag {
+  margin-right: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.tag.skyblue {
+  background-color: commonSkyblue;
+  color: commonBlue;
+  border: 0.1rem solid commonBlue;
+}
+
+.tag.blue {
+  background-color: commonBlue;
+  color: commonSkyblue;
+  border: 0.1rem solid commonSkyblue;
+}
+
+.tag.black {
+  background-color: commonBlack;
+  color: commonSkyblue;
+  border: 0.1rem solid commonSkyblue;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.title {
+  width: 50%;
+  font-weight: 700;
+  margin: 0;
+  text-align: end;
+}
+
+.title.skyblue {
+  color: commonBlue;
+}
+
+.title.blue {
+  color: commonSkyblue;
+}
+
+.title.black {
+  color: commonSkyblue;
 }
