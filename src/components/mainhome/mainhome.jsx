@@ -1,14 +1,18 @@
 import styles from "./mainhome.module.css";
 import React, { useCallback, useEffect, useState } from "react";
 import Header from "../header/header";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const MainHome = ({ authService }) => {
   const navigate = useNavigate();
-  const historyState = navigate?.location?.state;
+  const location = useLocation();
 
   // state
-  const [userId, setUserId] = useState(historyState && historyState.id);
+  const [userId, setUserId] = useState(location.state && location.state.id);
+  const [userName, setUserName] = useState(
+    location.state && location.state.userName
+  );
+
   const onLogout = useCallback(() => {
     authService.logout();
   }, [authService]);
@@ -18,6 +22,7 @@ const MainHome = ({ authService }) => {
     authService.onAuthChange((user) => {
       if (user) {
         setUserId(user.uid);
+        setUserName(user.displayName);
       } else {
         navigate("/");
       }
@@ -25,7 +30,7 @@ const MainHome = ({ authService }) => {
   });
   return (
     <>
-      <Header onLogout={onLogout} />
+      <Header onLogout={onLogout} userName={userName} />
     </>
   );
 };
