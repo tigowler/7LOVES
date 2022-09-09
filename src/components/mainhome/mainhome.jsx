@@ -2,6 +2,7 @@ import styles from "./mainhome.module.css";
 import React, { useCallback, useEffect, useState } from "react";
 import Header from "../header/header";
 import { useLocation, useNavigate } from "react-router-dom";
+import Card from "../card/card";
 
 const MainHome = ({ authService }) => {
   const navigate = useNavigate();
@@ -31,6 +32,7 @@ const MainHome = ({ authService }) => {
   return (
     <>
       <Header onLogout={onLogout} userName={userName} />
+      <Card />
     </>
   );
 };
