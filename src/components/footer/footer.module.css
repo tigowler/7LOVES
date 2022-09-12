@@ -1,0 +1,56 @@
+@value commonBlack, commonBlue, commonSkyblue, commonGrey from '../../common/colors.css';
+
+.footer {
+  height: 5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.message {
+  color: commonSkyblue;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.title {
+  color: commonBlue;
+  font-weight: 700;
+  font-size: 1rem;
+  margin: 0;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+.buttons {
+  width: 15rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+.button {
+  background-color: transparent;
+  color: commonSkyblue;
+  font-size: 1rem;
+  font-weight: 700;
+  border: 0.1rem solid commonSkyblue;
+  border-radius: 1.2rem;
+  padding: 0.2rem 0.7rem;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: commonBlue;
+  border: 0.1rem solid commonBlue;
+}
