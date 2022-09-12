@@ -3,6 +3,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import Header from "../header/header";
 import { useLocation, useNavigate } from "react-router-dom";
 import Card from "../card/card";
+import Footer from "../footer/footer";
 
 const MainHome = ({ authService }) => {
   const navigate = useNavigate();
@@ -39,10 +40,23 @@ const MainHome = ({ authService }) => {
       imageURL: "",
     },
   ]);
+  const [makeFooters, setMakeFooters] = useState({
+    instruction: "",
+    title: "",
+  });
 
   const onLogout = useCallback(() => {
     authService.logout();
   }, [authService]);
+
+  const onMoreClick = (instruction, title) => {
+    setMakeFooters((makeFooters) => {
+      const updated = { ...makeFooters };
+      updated.instruction = instruction;
+      updated.title = title;
+      return updated;
+    });
+  };
 
   // 로그인
   useEffect(() => {
@@ -59,8 +73,12 @@ const MainHome = ({ authService }) => {
     <>
       <Header onLogout={onLogout} userName={userName} />
       {cards.map((card, index) => {
-        return <Card key={index} card={card} />;
+        return <Card key={index} card={card} onMoreClick={onMoreClick} />;
       })}
+      <Footer
+        instruction={makeFooters.instruction}
+        selectedTitle={makeFooters.title}
+      />
     </>
   );
 };
