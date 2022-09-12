@@ -78,6 +78,7 @@ body {
   cursor: pointer;
   border: 0.1rem solid commonBlue;
   border-radius: 1.2rem;
+  transition: 0.2s ease-in-out;
 }
 
 .button:hover {

@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+.cardPack {
+  /* TODO: 삭제 필요 */
+  margin-left: 1.4rem;
+}
+
 .card {
   width: 13em;
   height: 20em;
@@ -48,10 +53,11 @@
   cursor: pointer;
   padding: 0;
   border: none;
+  transition: 0.2s ease-in-out;
 }
 
 .more:hover {
-  transform: scale(1.1);
+  transform: scale(1.3);
 }
 
 .more.skyblue {
@@ -63,6 +69,26 @@
 }
 
 .more.black {
+  color: commonSkyblue;
+}
+
+.count {
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.count.skyblue:hover {
+  background-color: commonSkyblue;
+  color: commonBlue;
+}
+
+.count.blue:hover {
+  background-color: commonBlue;
+  color: commonSkyblue;
+}
+
+.count.black:hover {
+  background-color: commonBlack;
   color: commonSkyblue;
 }
 
