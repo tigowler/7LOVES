@@ -2,7 +2,6 @@ import styles from "./card.module.css";
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
-import { useEffect } from "react";
 
 const Card = ({ card, onMoreClick }) => {
   return (
@@ -15,7 +14,7 @@ const Card = ({ card, onMoreClick }) => {
             </div>
             <button
               className={`${styles.more} ${getColors(card.theme)}`}
-              onClick={onMoreClick("options", `${card.title}`)}
+              onClick={() => onMoreClick("options", `${card.title}`)}
             >
               <FontAwesomeIcon icon={faEllipsis} />
             </button>

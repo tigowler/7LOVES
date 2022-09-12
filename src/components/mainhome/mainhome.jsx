@@ -25,7 +25,7 @@ const MainHome = ({ authService }) => {
     },
     {
       date: "20220901",
-      title: "#Shanghai Dragons",
+      title: "#Seoul Dynasty",
       tags: ["#e-sports", "#IZaYaKi", "#Fleta"],
       count: 52,
       theme: "blue",
@@ -33,7 +33,7 @@ const MainHome = ({ authService }) => {
     },
     {
       date: "20220901",
-      title: "#Shanghai Dragons",
+      title: "#Shanghai Dragons!!",
       tags: ["#e-sports", "#IZaYaKi", "#Fleta"],
       count: 52,
       theme: "black",
