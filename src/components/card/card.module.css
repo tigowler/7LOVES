@@ -10,11 +10,11 @@
   position: relative;
 }
 
-.cardPack:hover .card {
+.flip.front {
   transform: rotateY(180deg);
 }
 
-.cardPack:hover .back {
+.flip.back {
   transform: rotateY(0deg);
 }
 
@@ -43,7 +43,6 @@
 }
 
 .back {
-  background-color: aquamarine;
   transform: rotateY(-180deg);
 }
 

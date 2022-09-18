@@ -15,6 +15,7 @@ const MainHome = ({ authService }) => {
   );
   const [cards, setCards] = useState([
     {
+      id: 1,
       date: "20220901",
       title: "#Shanghai Dragons",
       tags: ["#e-sports", "#IZaYaKi", "#Fleta"],
@@ -23,6 +24,7 @@ const MainHome = ({ authService }) => {
       imageURL: "",
     },
     {
+      id: 2,
       date: "20220901",
       title: "#Shanghai Dragons",
       tags: ["#e-sports", "#IZaYaKi", "#Fleta"],
@@ -31,6 +33,7 @@ const MainHome = ({ authService }) => {
       imageURL: "",
     },
     {
+      id: 3,
       date: "20220901",
       title: "#Shanghai Dragons",
       tags: ["#e-sports", "#IZaYaKi", "#Fleta"],
@@ -39,6 +42,16 @@ const MainHome = ({ authService }) => {
       imageURL: "",
     },
   ]);
+
+  const [flip, setFlip] = useState(-1);
+
+  const onMoreClick = (id) => {
+    setFlip(() => {
+      const newFlip = id;
+      console.log(`flip id=${id}`);
+      return newFlip;
+    });
+  };
 
   const onLogout = useCallback(() => {
     authService.logout();
@@ -59,7 +72,14 @@ const MainHome = ({ authService }) => {
     <>
       <Header onLogout={onLogout} userName={userName} />
       {cards.map((card, index) => {
-        return <Card key={index} card={card} />;
+        return (
+          <Card
+            key={index}
+            card={card}
+            onMoreClick={onMoreClick}
+            flip={flip === card.id ? true : false}
+          />
+        );
       })}
     </>
   );

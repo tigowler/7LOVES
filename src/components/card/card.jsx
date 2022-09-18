@@ -3,18 +3,23 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
 
-const Card = ({ card }) => {
+const Card = ({ card, onMoreClick, flip }) => {
   return (
     <div className={styles.cardPack}>
       <section
-        className={`${styles.card} ${styles.front} ${getColors(card.theme)}`}
+        className={`${styles.card} ${styles.front} ${getColors(card.theme)} ${
+          flip ? styles.flip : styles.upflip
+        }`}
       >
         <div className={styles.header}>
           <div className={styles.info}>
             <div className={`${styles.date} ${getColors(card.theme)}`}>
               {card.date}
             </div>
-            <button className={`${styles.more} ${getColors(card.theme)}`}>
+            <button
+              className={`${styles.more} ${getColors(card.theme)}`}
+              onClick={() => onMoreClick(card.id)}
+            >
               <FontAwesomeIcon icon={faEllipsis} />
             </button>
           </div>
@@ -40,7 +45,11 @@ const Card = ({ card }) => {
           </h4>
         </div>
       </section>
-      <section className={`${styles.card} ${styles.back}`}>
+      <section
+        className={`${styles.card} ${styles.back} ${getColors(card.theme)} ${
+          flip ? styles.flip : styles.upflip
+        }`}
+      >
         <h4>Back side✨</h4>
       </section>
     </div>
