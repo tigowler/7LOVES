@@ -5,8 +5,17 @@
 }
 
 .cardPack {
-  /* TODO: 삭제 필요 */
+  width: fit-content;
   margin-left: 1.4rem;
+  position: relative;
+}
+
+.cardPack:hover .card {
+  transform: rotateY(180deg);
+}
+
+.cardPack:hover .back {
+  transform: rotateY(0deg);
 }
 
 .card {
@@ -17,6 +26,25 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  backface-visibility: hidden;
+  visibility: visible;
+  transition: 1s ease-in-out;
+
+  /* for safari */
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-perspective: 0;
+  -webkit-transition: 1s;
+}
+
+.front {
+  position: absolute;
+  transform: rotateY(0deg);
+}
+
+.back {
+  background-color: aquamarine;
+  transform: rotateY(-180deg);
 }
 
 .card.skyblue {

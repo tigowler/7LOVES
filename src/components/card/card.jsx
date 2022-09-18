@@ -6,7 +6,9 @@ import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
 const Card = ({ card }) => {
   return (
     <div className={styles.cardPack}>
-      <section className={`${styles.card} ${getColors(card.theme)}`}>
+      <section
+        className={`${styles.card} ${styles.front} ${getColors(card.theme)}`}
+      >
         <div className={styles.header}>
           <div className={styles.info}>
             <div className={`${styles.date} ${getColors(card.theme)}`}>
@@ -37,6 +39,9 @@ const Card = ({ card }) => {
             {card.title}
           </h4>
         </div>
+      </section>
+      <section className={`${styles.card} ${styles.back}`}>
+        <h4>Back side✨</h4>
       </section>
     </div>
   );
