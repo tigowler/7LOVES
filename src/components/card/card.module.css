@@ -29,6 +29,14 @@
   backface-visibility: hidden;
   visibility: visible;
   transition: 1s ease-in-out;
+  color: commonSkyblue;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+  /* border: 0.2rem solid white; */
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  overflow: hidden;
 
   /* for safari */
   -webkit-backface-visibility: hidden;
@@ -44,21 +52,6 @@
 
 .back {
   transform: rotateY(-180deg);
-}
-
-.card.skyblue {
-  background-color: commonSkyblue;
-  border: 0.1rem solid commonSkyblue;
-}
-
-.card.blue {
-  background-color: commonBlue;
-  border: 0.1rem solid commonBlue;
-}
-
-.card.black {
-  background-color: commonBlack;
-  border: 0.1rem solid commonSkyblue;
 }
 
 .header {
@@ -81,42 +74,21 @@
   padding: 0;
   border: none;
   transition: 0.2s ease-in-out;
+  color: white;
 }
 
 .more:hover {
   transform: scale(1.3);
 }
 
-.more.skyblue {
-  color: commonBlue;
-}
-
-.more.blue {
-  color: commonSkyblue;
-}
-
-.more.black {
-  color: commonSkyblue;
-}
-
 .count {
   cursor: pointer;
+  background-color: transparent;
   transition: 0.2s ease-in-out;
 }
 
-.count.skyblue:hover {
-  background-color: commonSkyblue;
-  color: commonBlue;
-}
-
-.count.blue:hover {
-  background-color: commonBlue;
-  color: commonSkyblue;
-}
-
-.count.black:hover {
-  background-color: commonBlack;
-  color: commonSkyblue;
+.count:hover {
+  transform: scale(1.1);
 }
 
 .tags {
@@ -130,8 +102,10 @@
 .count {
   font-size: 0.9rem;
   background-color: transparent;
+  border: 0.1rem solid white;
   border-radius: 1.2rem;
   padding: 0.2rem 0.7rem;
+  color: white;
 }
 
 .date,
@@ -139,48 +113,9 @@
   font-weight: 700;
 }
 
-.date.skyblue,
-.count.skyblue {
-  background-color: commonBlue;
-  color: commonSkyblue;
-  border: 0.1rem solid commonBlue;
-}
-
-.date.blue,
-.count.blue {
-  background-color: commonSkyblue;
-  color: commonBlue;
-  border: 0.1rem solid commonSkyblue;
-}
-
-.date.black,
-.count.black {
-  background-color: commonSkyblue;
-  color: commonBlack;
-  border: 0.1rem solid commonSkyblue;
-}
-
 .tag {
   margin-right: 0.2rem;
   margin-bottom: 0.2rem;
-}
-
-.tag.skyblue {
-  background-color: commonSkyblue;
-  color: commonBlue;
-  border: 0.1rem solid commonBlue;
-}
-
-.tag.blue {
-  background-color: commonBlue;
-  color: commonSkyblue;
-  border: 0.1rem solid commonSkyblue;
-}
-
-.tag.black {
-  background-color: commonBlack;
-  color: commonSkyblue;
-  border: 0.1rem solid commonSkyblue;
 }
 
 .footer {
@@ -189,6 +124,14 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap;
+  transform: translateY(5rem);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.card:hover > .footer {
+  transform: translateY(0rem);
+  opacity: 1;
 }
 
 .title {
@@ -196,16 +139,5 @@
   font-weight: 700;
   margin: 0;
   text-align: end;
-}
-
-.title.skyblue {
-  color: commonBlue;
-}
-
-.title.blue {
-  color: commonSkyblue;
-}
-
-.title.black {
-  color: commonSkyblue;
+  color: white;
 }

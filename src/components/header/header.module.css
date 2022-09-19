@@ -1,9 +1,5 @@
 @value commonBlack, commonBlue, commonSkyblue, commonGrey from '../../common/colors.css';
 
-* {
-  box-sizing: border-box;
-}
-
 .header {
   display: flex;
   flex-direction: row;
@@ -22,17 +18,17 @@
 .button {
   width: 5em;
   height: 2.5em;
-  background-color: commonBlue;
+  background-color: transparent;
   cursor: pointer;
-  border: 0.1rem solid commonBlue;
+  border: 0.1rem solid white;
   border-radius: 1.2rem;
   color: commonSkyblue;
   font-size: 1rem;
   font-weight: 700;
   margin: 0 0.5rem 0 0;
+  transition: 0.2s ease-in-out;
 }
 
 .button:hover {
-  background-color: commonBlack;
-  border: 0.1rem solid commonSkyblue;
+  transform: scale(1.1);
 }

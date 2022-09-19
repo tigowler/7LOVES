@@ -4,6 +4,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
 
 const Card = ({ card, onMoreClick, flip }) => {
+  const onCountClick = () => {
+    console.log("onCountClick!");
+  };
+
   return (
     <div className={styles.cardPack}>
       <section
@@ -37,7 +41,10 @@ const Card = ({ card, onMoreClick, flip }) => {
           </div>
         </div>
         <div className={styles.footer}>
-          <button className={`${styles.count} ${getColors(card.theme)}`}>
+          <button
+            className={`${styles.count} ${getColors(card.theme)}`}
+            onClick={onCountClick}
+          >
             ❤{card.count}
           </button>
           <h4 className={`${styles.title} ${getColors(card.theme)}`}>
