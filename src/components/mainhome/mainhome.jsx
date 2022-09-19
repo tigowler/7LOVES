@@ -69,19 +69,21 @@ const MainHome = ({ authService }) => {
     });
   });
   return (
-    <>
+    <div className={styles.home}>
       <Header onLogout={onLogout} userName={userName} />
-      {cards.map((card, index) => {
-        return (
-          <Card
-            key={index}
-            card={card}
-            onMoreClick={onMoreClick}
-            flip={flip === card.id ? true : false}
-          />
-        );
-      })}
-    </>
+      <div className={styles.cardPacks}>
+        {cards.map((card, index) => {
+          return (
+            <Card
+              key={index}
+              card={card}
+              onMoreClick={onMoreClick}
+              flip={flip === card.id ? true : false}
+            />
+          );
+        })}
+      </div>
+    </div>
   );
 };
 
