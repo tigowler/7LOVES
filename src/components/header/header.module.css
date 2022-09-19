@@ -1,0 +1,35 @@
+@value commonBlack, commonBlue, commonSkyblue, commonGrey from '../../common/colors.css';
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.userName {
+  color: commonSkyblue;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-right: 0.7rem;
+}
+
+.button {
+  width: 5em;
+  height: 2.5em;
+  background-color: transparent;
+  cursor: pointer;
+  border: 0.1rem solid white;
+  border-radius: 1.2rem;
+  color: commonSkyblue;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0.5rem 0 0;
+  transition: 0.2s ease-in-out;
+}
+
+.button:hover {
+  transform: scale(1.1);
+  opacity: 0.5;
+}

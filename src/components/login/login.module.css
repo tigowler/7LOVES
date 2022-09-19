@@ -1,25 +1,5 @@
 @value commonBlack, commonBlue, commonSkyblue, commonGrey from '../../common/colors.css';
 
-/* @font-face {
-  font-family: "NanumSquareRound";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
-} */
-
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&display=swap");
-
-* {
-  box-sizing: border-box;
-  font-family: "Comfortaa", cursive;
-  /* font-family: "NanumSquareRound"; */
-}
-
-body {
-  background-color: commonBlack;
-}
-
 .background {
   width: 100vw;
   height: 100vh;
@@ -32,7 +12,7 @@ body {
 .title {
   font-size: 2rem;
   font-weight: 700;
-  color: commonBlue;
+  color: white;
   text-align: center;
   margin: 0;
   margin-bottom: 0.3rem;
@@ -43,15 +23,19 @@ body {
   height: 22em;
   display: flex;
   flex-direction: column;
-  background-color: commonSkyblue;
+  background-color: transparent;
   padding: 1.4rem;
-  border: 0.2rem solid commonBlue;
+  border: 0.2rem solid white;
   border-radius: 1.2rem;
   justify-content: space-between;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .subtitle {
-  color: commonBlue;
+  color: white;
   font-size: 1.2rem;
   font-weight: 700;
   text-align: end;
@@ -72,15 +56,16 @@ body {
 .button {
   width: 100%;
   height: 2.5em;
-  color: commonBlue;
+  color: white;
   font-size: 1rem;
   background-color: transparent;
   cursor: pointer;
-  border: 0.1rem solid commonBlue;
+  border: 0.1rem solid white;
   border-radius: 1.2rem;
+  transition: 0.2s ease-in-out;
 }
 
 .button:hover {
-  background-color: commonBlue;
-  color: commonSkyblue;
+  transform: scale(1.1);
+  opacity: 0.5;
 }

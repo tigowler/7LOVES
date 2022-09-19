@@ -36,3 +36,49 @@
     transform: rotate(360deg);
   }
 }
+
+@value commonBlack, commonBlue, commonSkyblue, commonGrey from './common/colors.css';
+
+/* @font-face {
+  font-family: "NanumSquareRound";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Comfortaa", cursive;
+  /* font-family: "NanumSquareRound"; */
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: #3277ff;
+  background: -moz-linear-gradient(
+    top,
+    #3277ff 0%,
+    #2d5ded 23%,
+    #ff898b 79%,
+    #ff898b 100%
+  );
+  background: -webkit-linear-gradient(
+    top,
+    #3277ff 0%,
+    #2d5ded 23%,
+    #ff898b 79%,
+    #ff898b 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    #3277ff 0%,
+    #2d5ded 23%,
+    #ff898b 79%,
+    #ff898b 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3277ff', endColorstr='#ff898b',GradientType=0 );
+}

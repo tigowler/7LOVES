@@ -1,20 +1,25 @@
 import styles from "./login.module.css";
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Login = ({ authService }) => {
   const navigate = useNavigate();
-  const goToMain = (userId) => {
-    navigate("/home", { state: { id: userId } });
+  const goToMain = (userId, displayName) => {
+    navigate("/home", { state: { id: userId, userName: displayName } });
   };
   const onLogin = (event) => {
     authService //
       .login(event.target.id)
       .then((data) => {
-        console.log(data.user.uid);
-        goToMain(data.user.uid);
+        goToMain(data.user.uid, data.user.displayName);
       });
   };
+
+  useEffect(() => {
+    authService.onAuthChange((user) => {
+      user && goToMain(user.uid, user.displayName);
+    });
+  });
   return (
     <section className={styles.background}>
       <h1 className={styles.title}>7LOVES</h1>
