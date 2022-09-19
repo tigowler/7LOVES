@@ -48,7 +48,13 @@ const MainHome = ({ authService }) => {
   const onMoreClick = (id) => {
     setFlip(() => {
       const newFlip = id;
-      console.log(`flip id=${id}`);
+      return newFlip;
+    });
+  };
+
+  const onCancelClick = () => {
+    setFlip(() => {
+      const newFlip = -1;
       return newFlip;
     });
   };
@@ -79,6 +85,7 @@ const MainHome = ({ authService }) => {
               card={card}
               onMoreClick={onMoreClick}
               flip={flip === card.id ? true : false}
+              onCancelClick={onCancelClick}
             />
           );
         })}

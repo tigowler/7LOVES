@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
 
-const Card = ({ card, onMoreClick, flip }) => {
+const Card = ({ card, onMoreClick, flip, onCancelClick }) => {
   const onCountClick = () => {
     console.log("onCountClick!");
   };
@@ -11,17 +11,15 @@ const Card = ({ card, onMoreClick, flip }) => {
   return (
     <div className={styles.cardPack}>
       <section
-        className={`${styles.card} ${styles.front} ${getColors(card.theme)} ${
+        className={`${styles.card} ${styles.front} ${
           flip ? styles.flip : styles.upflip
         }`}
       >
         <div className={styles.header}>
           <div className={styles.info}>
-            <div className={`${styles.date} ${getColors(card.theme)}`}>
-              {card.date}
-            </div>
+            <div className={styles.date}>{card.date}</div>
             <button
-              className={`${styles.more} ${getColors(card.theme)}`}
+              className={styles.more}
               onClick={() => onMoreClick(card.id)}
             >
               <FontAwesomeIcon icon={faEllipsis} />
@@ -30,10 +28,7 @@ const Card = ({ card, onMoreClick, flip }) => {
           <div className={styles.tags}>
             {card.tags.map((tag, index) => {
               return (
-                <div
-                  key={index}
-                  className={` ${styles.tag} ${getColors(card.theme)}`}
-                >
+                <div key={index} className={styles.tag}>
                   {tag}
                 </div>
               );
@@ -41,39 +36,32 @@ const Card = ({ card, onMoreClick, flip }) => {
           </div>
         </div>
         <div className={styles.footer}>
-          <button
-            className={`${styles.count} ${getColors(card.theme)}`}
-            onClick={onCountClick}
-          >
+          <button className={styles.count} onClick={onCountClick}>
             ❤{card.count}
           </button>
-          <h4 className={`${styles.title} ${getColors(card.theme)}`}>
-            {card.title}
-          </h4>
+          <h4 className={styles.title}>{card.title}</h4>
         </div>
       </section>
       <section
-        className={`${styles.card} ${styles.back} ${getColors(card.theme)} ${
+        className={`${styles.card} ${styles.back} ${
           flip ? styles.flip : styles.upflip
         }`}
       >
-        <h4>Back side✨</h4>
+        <div className={styles.buttons}>
+          <button className={styles.button}>Edit</button>
+          <button className={styles.button}>Delete</button>
+          <button
+            className={styles.button}
+            onClick={() => {
+              onCancelClick();
+            }}
+          >
+            Cancel
+          </button>
+        </div>
       </section>
     </div>
   );
 };
-
-function getColors(theme) {
-  switch (theme) {
-    case "skyblue":
-      return styles.skyblue;
-    case "blue":
-      return styles.blue;
-    case "black":
-      return styles.black;
-    default:
-      throw new Error(`unknown theme: ${theme}`);
-  }
-}
 
 export default Card;
